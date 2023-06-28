@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client 2</title>
+</head>
+
+<body>
+
+  <div id="log"></div>
+
+  <script type="importmap">
+      {
+        "imports": {
+          "cross-storage-hub": "./node_modules/cross-storage-hub/lib/index.js",
+          "cross-storage-client": "./node_modules/cross-storage-client/lib/index.js"
+        }
+      }
+    </script>
+  <script type="module">
+    import Client from 'cross-storage-client'
+
+    const client = new Client('http://localhost:3001/hub.html')
+
+    client.connect().then(() => {
+      client.watch(key => {
+        log(`key ${key} changed`)
+
+        client.get(key).then(val => {
+          log('change get val', val)
+        })
+      })
+    })
+
+    function log (...text) {
+      const div = document.createElement('p')
+      div.innerText = text.join(' ')
+      document.getElementById('log').appendChild(div)
+    }
+
+  </script>
+</body>
+
+</html>

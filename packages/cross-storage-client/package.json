@@ -1,0 +1,33 @@
+{
+  "name": "cross-storage-client",
+  "version": "0.0.1",
+  "description": "Cross domain local storage, with permissions",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "watch": "tsc -w",
+    "lint": "pnpm eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "prepublishOnly": "pnpm run lint && pnpm run build"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vace/cross-storage",
+    "directory": "packages/cross-storage-client"
+  },
+  "keywords": [
+    "cross-storage",
+    "cross-storage-hub",
+    "cross-storage-client",
+    "cross storage",
+    "cross domain"
+  ],
+  "author": "Vace(i@ahmq.net)",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.1.5"
+  }
+}

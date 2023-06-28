@@ -1,0 +1,32 @@
+{
+  "name": "cross-storage",
+  "version": "0.0.0",
+  "description": "Cross domain local storage",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "watch": "pnpm -r --parallel run watch",
+    "publish:packages": "ts-node ./scripts/publish.ts",
+    "publish:beta": "ts-node ./scripts/beta.ts",
+    "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "test": "NODE_ENV=unittest jest",
+    "coverage": "codecov"
+  },
+  "keywords": [
+    "cross-storage",
+    "cross-storage-hub",
+    "cross-storage-client",
+    "cross storage",
+    "cross domain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@7.29.1",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.43.0",
+    "tslib": "^2.6.0",
+    "typescript": "^5.1.5"
+  }
+}
