@@ -2,6 +2,11 @@
 
 Cross domain local storage, with permissions. Enables multiple browser windows/tabs, across a variety of domains, to share a single localStorage. fork from [cross-storage](https://github.com/zendesk/cross-storage)
 
+> Warning: This library is not supported in Safari. Safari's Intelligent Tracking Prevention (ITP) partitions browser storage based on the top frame. see: 
+> - [Tracking Prevention in WebKit](https://webkit.org/tracking-prevention/)
+> - [localstorage on iOS Safari does not persist in iFrames](https://developer.apple.com/forums/thread/109909)
+
+
 ## Usage
 
 ### Hub
